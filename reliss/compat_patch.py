@@ -9,22 +9,22 @@ def _patch_causal_conv1d():
     try:
         import causal_conv1d_cuda
     except ImportError:
-        return  # 没装就不管
+        return  # Skip when the extension is not installed.
 
     _orig_fwd = causal_conv1d_cuda.causal_conv1d_fwd
 
-    # 检测是否需要 patch: 尝试用 7 参数调用 fwd
-    # 如果原生支持 7 参数就不需要 patch
+    # Probe the seven-argument forward signature.
+    # No patch is needed if the extension supports it.
     try:
-        # 用小 tensor 测试
+        # Test with small tensors.
         _test_x = torch.zeros(1, 1, 4, device="cpu")
         _test_w = torch.zeros(1, 3, device="cpu")
         _orig_fwd(_test_x, _test_w, None, None, None, None, True)
-        return  # 原生支持 7 参数，不需要 patch
+        return  # The seven-argument signature is supported.
     except TypeError:
-        pass  # 需要 patch
+        pass  # Adapt the unsupported signature.
     except Exception:
-        pass  # 其他错误（如 CUDA 不可用），继续 patch
+        pass  # Continue patching after other errors, such as unavailable CUDA.
 
     def _patched_fwd(*args):
         """Wrap fwd: 7-arg (mamba_ssm 1.2.2) → 5-arg (causal_conv1d 1.1.x)."""

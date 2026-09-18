@@ -1,7 +1,7 @@
 # ReLiSS
 
 > [!IMPORTANT]
-> **Pretrained weights / 预训练权重：[Hugging Face · wanghekai/ReLiSS](https://huggingface.co/wanghekai/ReLiSS/tree/main)**
+> **Pretrained weights: [Hugging Face · wanghekai/ReLiSS](https://huggingface.co/wanghekai/ReLiSS/tree/main)**
 >
 > **11 checkpoints:** BraTS2021 × 5 · ISLES2022 × 5 · WMH2017 × 1. See [download instructions](docs/WEIGHTS.md).
 

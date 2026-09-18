@@ -3,10 +3,10 @@
 The module is imported by :mod:`reliss.network` and intentionally preserves
 the encoder-decoder topology used for inference.
 
-自适应下采样:
-    MambaEncoder 接受可选的 patch_size 参数，自动计算每个阶段各维度的
-    下采样 stride。当 patch_size=None 时退化为固定 stride=(2,2,2)，
-    与原始行为完全一致，保证向后兼容。
+Adaptive downsampling:
+    MambaEncoder accepts an optional patch_size to compute per-axis downsampling
+    strides for each stage. With patch_size=None, it uses fixed strides of
+    (2,2,2) for compatibility with the default behavior.
 """
 from __future__ import annotations
 import torch
@@ -16,7 +16,7 @@ from mamba_ssm.modules.mamba_simple import Mamba
 
 
 # ============================================================
-#  自适应 stride 计算
+#  Adaptive stride computation
 # ============================================================
 
 def compute_adaptive_strides(
@@ -24,20 +24,20 @@ def compute_adaptive_strides(
     num_stages: int = 4,
     min_feature_size: int = 4,
 ) -> list[tuple[int, int, int]]:
-    """根据 patch_size 计算每个阶段的自适应下采样 stride。
+    """Compute adaptive downsampling strides for each stage from patch_size.
 
-    规则:
-        - 每个维度独立决定是否下采样
-        - 如果某维度当前尺寸 < min_feature_size * 2，则该维度 stride=1
-        - 否则 stride=2
+    Rules:
+        - Choose downsampling independently for each axis.
+        - Use stride=1 when the current size is less than min_feature_size * 2.
+        - Otherwise use stride=2.
 
     Args:
-        patch_size: 输入 patch 的空间尺寸 (D, H, W)。
-        num_stages: 编码器阶段数。
-        min_feature_size: 每个维度允许的最小特征图尺寸。
+        patch_size: Spatial input patch dimensions (D, H, W).
+        num_stages: Number of encoder stages.
+        min_feature_size: Minimum feature-map size allowed along each axis.
 
     Returns:
-        每个阶段的 stride 列表，如 [(2,2,2), (1,2,2), ...]。
+        A list of stage strides, such as [(2,2,2), (1,2,2), ...].
 
     Example::
 
@@ -61,7 +61,7 @@ def compute_adaptive_strides(
 
 
 # ============================================================
-#  基础构建模块
+#  Building blocks
 # ============================================================
 
 class MambaLayer(nn.Module):
@@ -172,23 +172,23 @@ class LargeKernelConv(nn.Module):
 
 
 # ============================================================
-#  MambaEncoder (自适应下采样)
+#  MambaEncoder with adaptive downsampling
 # ============================================================
 
 class MambaEncoder(nn.Module):
-    """MambaEncoder 骨干网络，支持自适应下采样。
+    """MambaEncoder backbone with adaptive downsampling.
 
     Args:
-        in_chans: 输入通道数 (来自 stem 的 feat_size[0])。
-        depths: 每个阶段的层数，默认 [2,2,2,2]。
-        dims: 每个阶段的特征维度，默认 [48,96,192,384]。
-        patch_size: 输入 patch 空间尺寸 (D, H, W)。
-            提供时自动计算各维度独立的下采样 stride，避免小维度被过度下采样。
-            为 None 时使用固定 stride=(2,2,2)，与原始行为一致。
-        min_feature_size: 自适应 stride 时每维度允许的最小特征图尺寸，默认 4。
-        drop_path_rate: DropPath 比率 (保留接口，当前未使用)。
-        layer_scale_init_value: LayerScale 初始值 (保留接口)。
-        out_indices: 输出哪些阶段的特征，默认 [0,1,2,3]。
+        in_chans: Input channels, taken from the stem's feat_size[0].
+        depths: Layers per stage; defaults to [2,2,2,2].
+        dims: Feature dimensions per stage; defaults to [48,96,192,384].
+        patch_size: Spatial input patch dimensions (D, H, W).
+            Computes independent strides per axis to avoid excessive downsampling.
+            With None, uses fixed strides of (2,2,2).
+        min_feature_size: Minimum feature-map size per axis; defaults to 4.
+        drop_path_rate: DropPath rate; retained for API compatibility and unused.
+        layer_scale_init_value: Initial LayerScale value; retained for compatibility.
+        out_indices: Stages whose features are returned; defaults to [0,1,2,3].
     """
 
     def __init__(self, in_chans=1, depths=[2,2,2,2], dims=[48,96,192,384],
@@ -199,7 +199,7 @@ class MambaEncoder(nn.Module):
 
         num_stages = len(depths)
 
-        # 计算下采样 stride
+        # Compute downsampling strides.
         if patch_size is not None:
             self.strides = compute_adaptive_strides(
                 patch_size, num_stages, min_feature_size
@@ -207,7 +207,7 @@ class MambaEncoder(nn.Module):
         else:
             self.strides = [(2, 2, 2)] * num_stages
 
-        # Downsample layers (自适应 stride)
+        # Downsampling layers with adaptive strides.
         self.downsample_layers = nn.ModuleList()
         self.downsample_layers.append(nn.Sequential(
             nn.Conv3d(dims[0], dims[0], 3, stride=self.strides[0], padding=1)))
@@ -215,7 +215,7 @@ class MambaEncoder(nn.Module):
             self.downsample_layers.append(nn.Sequential(
                 nn.Conv3d(dims[i], dims[i+1], 3, stride=self.strides[i+1], padding=1)))
 
-        # Stages: 前2层仅 LargeKernelConv, 后2层 LargeKernelConv + Mamba
+        # Stages: LargeKernelConv in the first two; LargeKernelConv + Mamba in the last two.
         self.gscs = nn.ModuleList()
         self.stages = nn.ModuleList()
         for i in range(4):
