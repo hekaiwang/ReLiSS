@@ -1,0 +1,18 @@
+{
+    "channel_names": {
+        "0": "FLAIR",
+        "1": "T1"
+    },
+    "labels": {
+        "background": 0,
+        "wmh": 1
+    },
+    "numTraining": 60,
+    "numTest": 110,
+    "file_ending": ".nii.gz",
+    "name": "Dataset752_WMH2017",
+    "description": "WMH 2017 white matter hyperintensity segmentation; official train/test split; channels: FLAIR, T1 registered to FLAIR space",
+    "reference": "WMH Segmentation Challenge 2017",
+    "licence": "See original WMH 2017 Dataverse terms",
+    "release": "2017"
+}

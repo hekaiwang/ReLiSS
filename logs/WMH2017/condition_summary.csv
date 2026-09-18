@@ -1,0 +1,4 @@
+Dataset,Evaluation_Level,Fold,Checkpoint,Availability_Mask,Condition,Available_Modalities,Missing_Modalities,Missing_Count,Region,Cases,Metric_N,Dice,IoU,HD95_mm,ASSD_mm,Overall_Mean_Dice,Overall_Dice_Retention,Aggregation
+WMH2017,Official test,all,checkpoint_final.pth,10,flair_only,FLAIR,T1,1,WMH,110,110,0.7759545950736101,0.6455963889900841,5.711709705196908,1.1025600036666499,0.7759545950736101,0.9969332543366441,Official test case mean
+WMH2017,Official test,all,checkpoint_final.pth,01,t1_only,T1,FLAIR,1,WMH,110,110,0.6375117589498268,0.48947976587761205,10.982508330388024,2.5008826072533634,0.6375117589498268,0.8190642552576645,Official test case mean
+WMH2017,Official test,all,checkpoint_final.pth,11,full,FLAIR+T1,none,0,WMH,110,110,0.7783415707101952,0.6483548521541808,5.953986498111946,1.1001746236688696,0.7783415707101952,1,Official test case mean

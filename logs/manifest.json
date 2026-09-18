@@ -1,0 +1,140 @@
+{
+  "model": "ReLiSS",
+  "completed_runs": 11,
+  "records": [
+    {
+      "dataset": "BraTS2021",
+      "fold": "0",
+      "file": "logs/BraTS2021/fold_0.log",
+      "epochs": 300,
+      "completed": true,
+      "sha256": "4904328791eca9a222bf71ac71acc9e4be40b011c263292fe963f2a9dc548553"
+    },
+    {
+      "dataset": "BraTS2021",
+      "fold": "1",
+      "file": "logs/BraTS2021/fold_1.log",
+      "epochs": 300,
+      "completed": true,
+      "sha256": "c923136b56df68d5fd87086f6eca31640216c40032e842854753fa61e1357b2c"
+    },
+    {
+      "dataset": "BraTS2021",
+      "fold": "2",
+      "file": "logs/BraTS2021/fold_2.log",
+      "epochs": 300,
+      "completed": true,
+      "sha256": "914e2a416ae4377f1fea70dfdec42e6395f6434186e8a1b2216ffbae1b413ad8"
+    },
+    {
+      "dataset": "BraTS2021",
+      "fold": "3",
+      "file": "logs/BraTS2021/fold_3.log",
+      "epochs": 300,
+      "completed": true,
+      "sha256": "06d7ed4d6eee7c07a6eebd24550bfeec9cafec99b7379e8d3d39d70992c4eeee"
+    },
+    {
+      "dataset": "BraTS2021",
+      "fold": "4",
+      "file": "logs/BraTS2021/fold_4.log",
+      "epochs": 300,
+      "completed": true,
+      "sha256": "66764eabe485e129872e064846ebd1ec027b6d0b526ed7f6bd0d1c3f9cdfee3f"
+    },
+    {
+      "dataset": "BraTS2021",
+      "file": "logs/BraTS2021/per_case_metrics.csv",
+      "cases": 1251,
+      "conditions": 15,
+      "rows": 18765,
+      "sha256": "b1eff5cbff3c2c37b5834cd70013c7d643c5bb5d6b058b8a9eeaca8acf4bd5ea"
+    },
+    {
+      "dataset": "ISLES2022",
+      "fold": "0",
+      "file": "logs/ISLES2022/fold_0.log",
+      "epochs": 300,
+      "completed": true,
+      "sha256": "e5857aa433c5a11ccb248eebece73f79bb40ff96ce945c0f05d57e979b5339fa"
+    },
+    {
+      "dataset": "ISLES2022",
+      "fold": "1",
+      "file": "logs/ISLES2022/fold_1.log",
+      "epochs": 300,
+      "completed": true,
+      "sha256": "4711f5c0c675e063055495ad02be9759ad20296cfc2db19b4705a64ae4b42583",
+      "resumed_at_epoch": 200
+    },
+    {
+      "dataset": "ISLES2022",
+      "fold": "2",
+      "file": "logs/ISLES2022/fold_2.log",
+      "epochs": 300,
+      "completed": true,
+      "sha256": "3ab31ddcf193f8280e573c48bf68c0e33a06052e6232e2eeb3a8c4b9b4b9c8a0",
+      "resumed_at_epoch": 200
+    },
+    {
+      "dataset": "ISLES2022",
+      "fold": "3",
+      "file": "logs/ISLES2022/fold_3.log",
+      "epochs": 300,
+      "completed": true,
+      "sha256": "979ae8c94db6b0d1825f6df8caec4721b73c419f6788f0a97be092d77043c043",
+      "resumed_at_epoch": 200
+    },
+    {
+      "dataset": "ISLES2022",
+      "fold": "4",
+      "file": "logs/ISLES2022/fold_4.log",
+      "epochs": 300,
+      "completed": true,
+      "sha256": "a30ee0b16ef0d89ab58e6606b29c3bfd48d72356efa796d7aec8127b0254d711",
+      "resumed_at_epoch": 200
+    },
+    {
+      "dataset": "ISLES2022",
+      "file": "logs/ISLES2022/per_case_metrics.csv",
+      "cases": 250,
+      "conditions": 7,
+      "rows": 1750,
+      "sha256": "045a7ab9ac1250c74486bab6e34153a8f5395854f08bfd5977bd281b9691206c"
+    },
+    {
+      "dataset": "WMH2017",
+      "fold": "all",
+      "file": "logs/WMH2017/fold_all.log",
+      "epochs": 300,
+      "completed": true,
+      "sha256": "f57340b0db06673b18e13ea9db9b4d152d332c653c5b0b287a2dd05b27208de9"
+    },
+    {
+      "dataset": "WMH2017",
+      "file": "logs/WMH2017/per_case_metrics.csv",
+      "cases": 110,
+      "conditions": 3,
+      "rows": 330,
+      "sha256": "bb38d1c93cbc37d24f4147567533773bfcc3ee48ae54b2fc885887bcb5050f21"
+    },
+    {
+      "dataset": "BraTS2021",
+      "file": "logs/BraTS2021/condition_summary.csv",
+      "rows": 270,
+      "sha256": "a7d2bdcde800605edfe0a2062c4e9985241ca28ba82a5d98ca99fdbad99e5423"
+    },
+    {
+      "dataset": "ISLES2022",
+      "file": "logs/ISLES2022/condition_summary.csv",
+      "rows": 42,
+      "sha256": "5476f20535ed6688a53bb8d13822816093d8562605d89b33012879be81f43ef0"
+    },
+    {
+      "dataset": "WMH2017",
+      "file": "logs/WMH2017/condition_summary.csv",
+      "rows": 3,
+      "sha256": "7f80b273f8e6b7bdffa01330e376ac53914347a911e4e0acbacd0bb32ac83c34"
+    }
+  ]
+}

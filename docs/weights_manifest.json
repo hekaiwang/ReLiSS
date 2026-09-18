@@ -1,0 +1,119 @@
+{
+  "status": "Published checkpoints; verify file sizes and SHA-256 before use",
+  "huggingface_repository": "wanghekai/ReLiSS",
+  "files": [
+    {
+      "dataset": "Dataset137_BraTS2021",
+      "fold": "0",
+      "checkpoint": "checkpoint_best.pth",
+      "model": "reliss",
+      "release_trainer": "nnUNetTrainerReLiSS_300epochs",
+      "file": "Dataset137_BraTS2021/nnUNetTrainerReLiSS_300epochs__nnUNetPlans__3d_fullres/fold_0/checkpoint_best.pth",
+      "bytes": 1112688966,
+      "sha256": "b392ea94cbfcd0dad6d8362a1da7d4a85d0c06302bbf346e0b91a3bc19bdaf39"
+    },
+    {
+      "dataset": "Dataset137_BraTS2021",
+      "fold": "1",
+      "checkpoint": "checkpoint_best.pth",
+      "model": "reliss",
+      "release_trainer": "nnUNetTrainerReLiSS_300epochs",
+      "file": "Dataset137_BraTS2021/nnUNetTrainerReLiSS_300epochs__nnUNetPlans__3d_fullres/fold_1/checkpoint_best.pth",
+      "bytes": 1112688454,
+      "sha256": "09a17794af075546bd7124b1a564e9e8e3b311aaa65fb3bb69d8b4428ea36462"
+    },
+    {
+      "dataset": "Dataset137_BraTS2021",
+      "fold": "2",
+      "checkpoint": "checkpoint_best.pth",
+      "model": "reliss",
+      "release_trainer": "nnUNetTrainerReLiSS_300epochs",
+      "file": "Dataset137_BraTS2021/nnUNetTrainerReLiSS_300epochs__nnUNetPlans__3d_fullres/fold_2/checkpoint_best.pth",
+      "bytes": 1112693382,
+      "sha256": "30588226ad9fa1ebc1d983b6f4b79530501d928b2412b8ccb39178b67c495175"
+    },
+    {
+      "dataset": "Dataset137_BraTS2021",
+      "fold": "3",
+      "checkpoint": "checkpoint_best.pth",
+      "model": "reliss",
+      "release_trainer": "nnUNetTrainerReLiSS_300epochs",
+      "file": "Dataset137_BraTS2021/nnUNetTrainerReLiSS_300epochs__nnUNetPlans__3d_fullres/fold_3/checkpoint_best.pth",
+      "bytes": 1112692806,
+      "sha256": "0dee17113e13b6a9e802322c0b45bdd06c16ec776a6075c7ceb668a843b95afc"
+    },
+    {
+      "dataset": "Dataset137_BraTS2021",
+      "fold": "4",
+      "checkpoint": "checkpoint_best.pth",
+      "model": "reliss",
+      "release_trainer": "nnUNetTrainerReLiSS_300epochs",
+      "file": "Dataset137_BraTS2021/nnUNetTrainerReLiSS_300epochs__nnUNetPlans__3d_fullres/fold_4/checkpoint_best.pth",
+      "bytes": 1112692294,
+      "sha256": "41550ea3fefc0833855e3c2d63155cbe0714959dc4ed9dfa14d3c1d288423ca6"
+    },
+    {
+      "dataset": "Dataset751_ISLES2022",
+      "fold": "0",
+      "checkpoint": "checkpoint_final.pth",
+      "model": "reliss",
+      "release_trainer": "nnUNetTrainerReLiSS_300epochs",
+      "file": "Dataset751_ISLES2022/nnUNetTrainerReLiSS_300epochs__nnUNetPlans__3d_fullres/fold_0/checkpoint_final.pth",
+      "bytes": 1112629050,
+      "sha256": "3022b293e09e2837083b085b4d8257ba9ba96e12564096fadadc9822be1e7b73"
+    },
+    {
+      "dataset": "Dataset751_ISLES2022",
+      "fold": "1",
+      "checkpoint": "checkpoint_final.pth",
+      "model": "reliss",
+      "release_trainer": "nnUNetTrainerReLiSS_300epochs",
+      "file": "Dataset751_ISLES2022/nnUNetTrainerReLiSS_300epochs__nnUNetPlans__3d_fullres/fold_1/checkpoint_final.pth",
+      "bytes": 1112629242,
+      "sha256": "4ee24abc90e6703248b3c54022791970a584b6cf703ac18e7756738558994c2d"
+    },
+    {
+      "dataset": "Dataset751_ISLES2022",
+      "fold": "2",
+      "checkpoint": "checkpoint_final.pth",
+      "model": "reliss",
+      "release_trainer": "nnUNetTrainerReLiSS_300epochs",
+      "file": "Dataset751_ISLES2022/nnUNetTrainerReLiSS_300epochs__nnUNetPlans__3d_fullres/fold_2/checkpoint_final.pth",
+      "bytes": 1112629242,
+      "sha256": "fec925dc541e3e5b692af58484b5307b0e73a4d8471a65857c7a28475983b755"
+    },
+    {
+      "dataset": "Dataset751_ISLES2022",
+      "fold": "3",
+      "checkpoint": "checkpoint_final.pth",
+      "model": "reliss",
+      "release_trainer": "nnUNetTrainerReLiSS_300epochs",
+      "file": "Dataset751_ISLES2022/nnUNetTrainerReLiSS_300epochs__nnUNetPlans__3d_fullres/fold_3/checkpoint_final.pth",
+      "bytes": 1112629306,
+      "sha256": "71b283f4ce8bdb742393cb5277d36a0240ed0b3587ce266beff99cb751367fab"
+    },
+    {
+      "dataset": "Dataset751_ISLES2022",
+      "fold": "4",
+      "checkpoint": "checkpoint_final.pth",
+      "model": "reliss",
+      "release_trainer": "nnUNetTrainerReLiSS_300epochs",
+      "file": "Dataset751_ISLES2022/nnUNetTrainerReLiSS_300epochs__nnUNetPlans__3d_fullres/fold_4/checkpoint_final.pth",
+      "bytes": 1112629370,
+      "sha256": "fc885d3518ec938a7094dd44c064f8d77d6f7db7a229532c2b5c4907fbc27686"
+    },
+    {
+      "dataset": "Dataset752_WMH2017",
+      "fold": "all",
+      "checkpoint": "checkpoint_final.pth",
+      "model": "reliss",
+      "release_trainer": "nnUNetTrainerReLiSS_300epochs",
+      "file": "Dataset752_WMH2017/nnUNetTrainerReLiSS_300epochs__nnUNetPlans__3d_fullres/fold_all/checkpoint_final.pth",
+      "bytes": 1103176108,
+      "sha256": "7d3d22f333223abec8b736a368306392a3d4d4505622fa582a52ce77690d14dc"
+    }
+  ],
+  "count": 11,
+  "total_bytes": 12229778220,
+  "huggingface_revision": "1a2ec73921668b3a28eccf87bbd5b6513815b826"
+}
