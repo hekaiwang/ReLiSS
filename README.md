@@ -1,5 +1,10 @@
 # ReLiSS
 
+> [!IMPORTANT]
+> **Pretrained weights / 预训练权重：[Hugging Face · wanghekai/ReLiSS](https://huggingface.co/wanghekai/ReLiSS/tree/main)**
+>
+> **11 checkpoints:** BraTS2021 × 5 · ISLES2022 × 5 · WMH2017 × 1. See [download instructions](docs/WEIGHTS.md).
+
 ReLiSS for missing-modality MRI segmentation on BraTS2021, ISLES2022 and WMH2017.
 This release provides pretrained weights, completed-run logs, per-case metrics,
 inference, evaluation and fixed dataset splits. Training code and the full
