@@ -8,7 +8,7 @@ released split files when comparing with the included results.
 |---|---|---|
 | BraTS2021 | T1, T1ce, T2, FLAIR | Convert original 0→0, 2→1, 1→2, 4→3 |
 | ISLES2022 | FLAIR, ADC, DWI | Nonzero → 1 |
-| WMH2017 | FLAIR, T1 | Nonzero → 1, including original label 2 |
+| WMH2017 | FLAIR, T1 | 0 = background; 1 = WMH; 2 = other pathology, excluded from evaluation |
 
 For BraTS, converted regions are WT=[1,2,3], TC=[2,3], ET=[3]. Do not apply
 the label conversion twice. For ISLES, align/resample FLAIR linearly into the
